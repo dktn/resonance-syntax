@@ -1,0 +1,19 @@
+{
+  "name": "resonance-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "Resonance syntax theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dktn/resonance-syntax.git"
+  },
+  "author": {
+    "name": "Adam Szlachta"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "readme": "# Resonance-Syntax package\n\n![Resonance](https://raw.githubusercontent.com/dktn/resonance-syntax/master/resonance-theme.png)\n",
+  "readmeFilename": "README.md"
+}

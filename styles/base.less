@@ -1,0 +1,383 @@
+@import "syntax-variables";
+
+atom-text-editor, :host {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    // color: @text-light;
+    color: @text-medium;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+}
+
+atom-text-editor .search-results .marker .region,
+:host .search-results .marker .region {
+  background-color: transparent;
+  border: 1px solid @syntax-result-marker-color;
+}
+
+atom-text-editor .search-results .marker.current-result .region,
+:host .search-results .marker.current-result .region {
+  border: 1px solid @syntax-result-marker-color-selected;
+}
+
+.comment {
+  color: @text-dark; // haskell
+}
+// COMMENTS are here
+
+.keyword {
+  color: @keyword;
+
+  &.control {
+    color: @keyword; // haskell: do, case, of
+  }
+
+  &.operator {
+    color: @operator; // haskell
+  }
+
+  &.other {
+    color: @keyword;
+
+    &.special-method {
+      color: @blue;
+    }
+
+    &.unit {
+      color: @orange;
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.storage {
+  color: @data-type-keyword; // haskell
+
+  &.type {
+    //   color: @red;
+    //   text-decoration: underline;
+
+      &.class {
+        //   color: @pink; // coffescript
+        //   text-decoration: underline;
+      }
+  }
+}
+
+.constant {
+  color: @constant; // haskell
+
+  &.character.escape {
+    color: @string-escape;
+  }
+
+  &.numeric {
+    color: @numeric; // haskell
+  }
+
+  &.other.color {
+    color: magenta; //@cyan;
+    text-decoration: underline;
+  }
+
+  &.other.symbol {
+    color: pink; //@green;
+    text-decoration: underline;
+  }
+}
+
+.variable {
+  color: @syntax-variables;
+
+  &.interpolation {
+    color: darken(@red, 10%);
+  }
+
+  &.parameter.function {
+    color: @syntax-color-function-params
+  }
+  &.other {
+    color: @type-variable; // haskell
+    // text-decoration: underline;
+
+    &.instance {
+      color: @blue;
+    }
+  }
+}
+
+.invalid.illegal {
+  background-color: @red;
+  color: @syntax-background-color;
+}
+
+.string {
+  color: @string; // haskell
+
+
+  &.regexp {
+    color: @string-regexp; // haskell
+
+    .source.ruby.embedded {
+      color: @orange;
+    }
+  }
+
+  &.other.link {
+    color: @red;
+    text-decoration: underline;
+  }
+}
+
+.punctuation {
+  &.definition {
+    &.comment {
+      color: @text-dark; // haskell
+    }
+
+    &.string {
+      color: @string; // haskell
+    }
+    &.variable,
+    &.parameters,
+    &.array { // lua
+      color: lighten(@syntax-text-color, 8%);
+    //   text-decoration: underline;
+    }
+
+    &.heading,
+    &.identity {
+      color: pink; //@blue;
+      text-decoration: underline;
+    }
+
+    &.bold {
+      color: @light-orange;
+      font-weight: bold;
+    }
+
+    &.italic {
+      color: @purple;
+      font-style: italic;
+    }
+  }
+
+  &.section.embedded {
+    color: darken(@red, 10%);
+  }
+
+}
+
+// .identifier { // haskell:any identifier
+// }
+
+.support {
+  &.tag {
+    color: @build-in-constructor;
+  }
+
+  &.class {
+    color: @build-in-type; // haskell
+  }
+
+  &.function  {
+    color: @build-in-function; // haskell
+
+    &.any-method { // lua
+      color: @blue;
+    //   text-decoration: underline;
+    }
+  }
+  &.other.module {
+    color: @module; // haskell
+  }
+}
+
+.entity {
+  &.name.type {
+    color: @data-type; // haskell
+    // text-decoration: underline;
+  }
+  // &.other {
+  //   text-decoration: underline;
+  // }
+
+  &.other.inherited-class {
+    color: @deriving-classes; // haskell
+  }
+
+  &.name.function {
+    color: @function; // haskell
+  }
+
+  &.name.class, &.name.type.class {
+    color: @light-orange; // coffescript
+    // text-decoration: underline;
+  }
+
+  &.name.section {
+    color: @blue;
+    text-decoration: underline;
+  }
+
+  &.name.tag {
+    color: @constructor; // haskell
+  }
+
+  &.other.attribute-name {
+    color: @property; // haskell
+
+    &.id {
+      color: magenta; //@blue;
+      text-decoration: underline;
+    }
+  }
+}
+
+.meta {
+  &.class {
+    color: @light-orange;
+  }
+
+  &.declaration { // haskell: whole declaration
+      &.class {
+      }
+      &.instance {
+      }
+  }
+
+  &.link {
+    color: @orange;
+  }
+
+  &.require {
+    color: @blue;
+  }
+
+  &.selector {
+    color: @purple;
+  }
+
+  &.separator {
+    background-color: @gray;
+    color: @syntax-text-color;
+  }
+
+  &.function {
+      color: @pink; // haskell:operators in type signature if type-signature not defined
+  }
+
+  &.ctor {
+      color: @pink;
+      text-decoration: underline;
+  }
+
+  &.record-field { // haskell: whole record field
+    //   text-decoration: underline;
+  }
+
+  &.type-signature { // haskell:operators in type signature
+      color: @operators-type-signature;
+  }
+}
+
+.none {
+  color: @syntax-text-color;
+}
+
+.markup {
+  &.bold {
+    color: @orange;
+    font-weight: bold;
+  }
+
+  &.changed {
+    color: @purple;
+  }
+
+  &.deleted {
+    color: @red;
+  }
+
+  &.italic {
+    color: @purple;
+    font-style: italic;
+  }
+
+  &.heading .punctuation.definition.heading {
+    color: @blue;
+  }
+
+  &.inserted {
+    color: @green;
+  }
+
+  &.list {
+    color: @red;
+  }
+
+  &.quote {
+    color: @orange;
+  }
+
+  &.raw.inline {
+    color: pink; //@green;
+    text-decoration: underline;
+  }
+}
+
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+  &.heading {
+    color: @green;
+  }
+}
+
+atom-text-editor[mini] .scroll-view,
+:host([mini]) .scroll-view {
+  padding-left: 1px;
+}

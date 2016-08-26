@@ -1,0 +1,76 @@
+@import "colors";
+
+// This defines all syntax variables that syntax themes must implement when they
+// include a syntax-variables.less file.
+
+@theme-color: #a0b4cc;
+
+
+// Set the actual colors for use
+@text-keyword: @pink;
+// @text-keyword: @medium-orange;
+
+// General colors
+@syntax-operator-color:   @pink;
+@syntax-text-color:       @text-lighter;
+@syntax-cursor-color:     @text-lightest;
+@syntax-selection-color:  @base2_transparent;
+// @syntax-background-color: @background-darkestest;
+
+@syntax-background-color: shade(@theme-color, 75%);
+// @syntax-background-color: #242d38;
+// @syntax-background-color: #2c3643;
+
+// Guide colors
+@syntax-wrap-guide-color:          @dark-gray;
+@syntax-indent-guide-color:        @background-dark;
+@syntax-invisible-character-color: @text-light;
+
+// For find and replace markers
+@syntax-result-marker-color: @text-lightest;
+@syntax-result-marker-color-selected: white;
+
+// Gutter colors
+@syntax-gutter-text-color:                @text-lighter-plus;
+@syntax-gutter-text-color-selected:       @syntax-gutter-text-color;
+@syntax-gutter-background-color:          #2c3643;
+// @syntax-gutter-background-color:          @background-darker-plus;
+@syntax-gutter-background-color-selected: @base2_transparent;
+
+// For git diff info. i.e. in the gutter
+@syntax-color-renamed:         @blue;
+@syntax-color-added:           @green;
+@syntax-color-modified:        @orange;
+@syntax-color-removed:         @red;
+@syntax-color-function-params: @blue;
+@syntax-color-other:           @light-orange;
+@syntax-variables:             @medium-orange;
+
+
+
+// Haskell
+
+@build-in-type:            #50a455;
+@build-in-function:        #ebc57a;
+@build-in-constructor:     lighten(@constructor, 5%);
+
+@constructor:              #ec734b;
+@keyword:                  #dd9a36;
+@data-type-keyword:        #e69d2c;
+@data-type:                #b7bb4e;
+@module:                   #7ea999;
+@function:                 #96bb3b;
+@property:                 #7ebdc3;
+@operator:                 #fb4934;
+@operators-type-signature: #fb4934;
+@deriving-classes:         #e88535;
+@type-variable:            #f0cb25;
+// @type-variable:            #86b8c3;
+// @type-variable:            #46b0c8;
+
+// @numeric:                  #d8ea4d;
+@numeric:                  #6dc1d4;
+@string:                   #1da1bf;
+@string-regexp:            #a9dae5;
+@string-escape:            #5fcae3;
+@constant:                 #e88535;
