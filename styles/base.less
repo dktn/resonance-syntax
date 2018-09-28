@@ -136,7 +136,7 @@ atom-text-editor .search-results .marker.current-result .region,
     color: darken(@red, 10%);
   }
 
-  &.syntax--parameter.function {
+  &.syntax--parameter.syntax--function {
     color: @syntax-color-function-params
   }
   &.other {
@@ -306,20 +306,20 @@ atom-text-editor .search-results .marker.current-result .region,
     color: @syntax-text-color;
   }
 
-  &.function {
+  &.syntax--function {
       color: @pink; // haskell:operators in type signature if type-signature not defined
   }
 
-  &.ctor {
+  &.syntax--ctor {
       color: @pink;
       text-decoration: underline;
   }
 
-  &.record-field { // haskell: whole record field
+  &.syntax--record-field { // haskell: whole record field
     //   text-decoration: underline;
   }
 
-  &.type-signature { // haskell:operators in type signature
+  &.syntax--type-signature { // haskell:operators in type signature
       color: @operators-type-signature;
   }
 }
