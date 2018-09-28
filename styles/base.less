@@ -1,65 +1,65 @@
 @import "syntax-variables";
 
-atom-text-editor, :host {
+atom-text-editor,atom-text-editor{
   background-color: @syntax-background-color;
   color: @syntax-text-color;
 
-  .wrap-guide {
+  .syntax--wrap-guide {
     background-color: @syntax-wrap-guide-color;
   }
 
-  .indent-guide {
+  .syntax--indent-guide {
     color: @syntax-indent-guide-color;
   }
 
-  .invisible-character {
+  .syntax--invisible-character {
     color: @syntax-invisible-character-color;
   }
 
-  .gutter {
+  .syntax--gutter {
     background-color: @syntax-gutter-background-color;
     color: @syntax-gutter-text-color;
 
-    .line-number {
-      &.cursor-line {
+    .syntax--line-number {
+      &.syntax--cursor-line {
         background-color: @syntax-gutter-background-color-selected;
         color: @syntax-gutter-text-color-selected;
       }
 
-      &.cursor-line-no-selection {
+      &.syntax--cursor-line-no-selection {
         color: @syntax-gutter-text-color-selected;
       }
     }
   }
 
-  .gutter .line-number.folded,
-  .gutter .line-number:after,
-  .fold-marker:after {
+  .syntax--gutter .syntax--line-number.syntax--folded,
+  .syntax--gutter .syntax--line-number:after,
+  .syntax--fold-marker:after {
     // color: @text-light;
     color: @text-medium;
   }
 
-  .invisible {
+  .syntax--invisible {
     color: @syntax-text-color;
   }
 
-  .cursor {
+  .syntax--cursor {
     color: @syntax-cursor-color;
   }
 
-  .selection .region {
+  .syntax--selection .syntax--region {
     background-color: @syntax-selection-color;
   }
 }
 
-atom-text-editor .search-results .marker .region,
-:host .search-results .marker .region {
+atom-text-editor .syntax--search-results .syntax--marker .syntax--region,
+:host .syntax--search-results .syntax--marker .syntax--region {
   background-color: transparent;
   border: 1px solid @syntax-result-marker-color;
 }
 
-atom-text-editor .search-results .marker.current-result .region,
-:host .search-results .marker.current-result .region {
+atom-text-editor .syntax--search-results .syntax--marker.syntax--current-result .syntax--region,
+:host .syntax--search-results .syntax--marker.syntax--current-result .syntax--region {
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
@@ -139,7 +139,7 @@ atom-text-editor .search-results .marker.current-result .region,
   &.syntax--parameter.syntax--function {
     color: @syntax-color-function-params
   }
-  &.other {
+  &.syntax--other {
     color: @type-variable; // haskell
     // text-decoration: underline;
 
@@ -173,7 +173,7 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .syntax--punctuation {
-  &.definition {
+  &.syntax--definition {
     &.syntax--comment {
       color: @text-dark; // haskell
     }
@@ -211,7 +211,7 @@ atom-text-editor .search-results .marker.current-result .region,
 
 }
 
-// .identifier { // haskell:any identifier
+// .syntax--identifier { // haskell:any identifier
 // }
 
 .syntax--support {
@@ -237,11 +237,11 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .syntax--entity {
-  &.name.type {
+  &.syntax--name.syntax--type {
     color: @data-type; // haskell
     // text-decoration: underline;
   }
-  // &.other {
+  // &.syntax--other {
   //   text-decoration: underline;
   // }
 
@@ -351,32 +351,32 @@ atom-text-editor .search-results .marker.current-result .region,
     color: @blue;
   }
 
-  &.inserted {
+  &.syntax--inserted {
     color: @green;
   }
 
-  &.list {
+  &.syntax--list {
     color: @red;
   }
 
-  &.quote {
+  &.syntax--quote {
     color: @orange;
   }
 
-  &.raw.inline {
+  &.syntax--raw.syntax--inline {
     color: pink; //@green;
     text-decoration: underline;
   }
 }
 
-.source.gfm .syntax--markup {
+.syntax--source.syntax--gfm .syntax--markup {
   -webkit-font-smoothing: auto;
   &.syntax--heading {
     color: @green;
   }
 }
 
-atom-text-editor[mini] .scroll-view,
+atom-text-editor[mini] .syntax--scroll-view,
 :host([mini]) .scroll-view {
   padding-left: 1px;
 }
