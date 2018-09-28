@@ -53,13 +53,13 @@ atom-text-editor,atom-text-editor{
 }
 
 atom-text-editor .syntax--search-results .syntax--marker .syntax--region,
-:host .syntax--search-results .syntax--marker .syntax--region {
+.syntax--search-results .syntax--marker .syntax--region{
   background-color: transparent;
   border: 1px solid @syntax-result-marker-color;
 }
 
 atom-text-editor .syntax--search-results .syntax--marker.syntax--current-result .syntax--region,
-:host .syntax--search-results .syntax--marker.syntax--current-result .syntax--region {
+ .syntax--search-results .syntax--marker.syntax--current-result .syntax--region {
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
@@ -377,6 +377,6 @@ atom-text-editor .syntax--search-results .syntax--marker.syntax--current-result 
 }
 
 atom-text-editor[mini] .syntax--scroll-view,
-:host([mini]) .scroll-view {
+atom-text-editor([mini]) .scroll-view {
   padding-left: 1px;
 }
