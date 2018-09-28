@@ -63,30 +63,30 @@ atom-text-editor .search-results .marker.current-result .region,
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
-.comment {
+.syntax--comment {
   color: @text-dark; // haskell
 }
 // COMMENTS are here
 
-.keyword {
+.syntax--keyword {
   color: @keyword;
 
-  &.control {
+  &.syntax--control {
     color: @keyword; // haskell: do, case, of
   }
 
-  &.operator {
+  &.syntax--operator {
     color: @operator; // haskell
   }
 
-  &.other {
+  &.syntax--other {
     color: @keyword;
 
-    &.special-method {
+    &.syntax--special-method {
       color: @blue;
     }
 
-    &.unit {
+    &.syntax--unit {
       color: @orange;
       text-decoration: underline;
     }
@@ -94,118 +94,118 @@ atom-text-editor .search-results .marker.current-result .region,
 
 }
 
-.storage {
+.syntax--storage {
   color: @data-type-keyword; // haskell
 
-  &.type {
+  &.syntax--type {
     //   color: @red;
     //   text-decoration: underline;
 
-      &.class {
+      &.syntax--class {
         //   color: @pink; // coffescript
         //   text-decoration: underline;
       }
   }
 }
 
-.constant {
+.syntax--constant {
   color: @constant; // haskell
 
-  &.character.escape {
+  &.syntax--character.syntax--escape {
     color: @string-escape;
   }
 
-  &.numeric {
+  &.syntax--numeric {
     color: @numeric; // haskell
   }
 
-  &.other.color {
+  &.syntax--other.syntax--color {
     color: magenta; //@cyan;
     text-decoration: underline;
   }
 
-  &.other.symbol {
+  &.syntax--other.syntax--symbol {
     color: @green; // elixir:atom
   }
 }
 
-.variable {
+.syntax--variable {
   color: @syntax-variables;
 
-  &.interpolation {
+  &.syntax--interpolation {
     color: darken(@red, 10%);
   }
 
-  &.parameter.function {
+  &.syntax--parameter.function {
     color: @syntax-color-function-params
   }
   &.other {
     color: @type-variable; // haskell
     // text-decoration: underline;
 
-    &.instance {
+    &.syntax--instance {
       color: @blue;
     }
   }
 }
 
-.invalid.illegal {
+.syntax--invalid.syntax--illegal {
   background-color: @red;
   color: @syntax-background-color;
 }
 
-.string {
+.syntax--string {
   color: @string; // haskell
 
 
-  &.regexp {
+  &.syntax--regexp {
     color: @string-regexp; // haskell
 
-    .source.ruby.embedded {
+    .syntax--source.syntax--ruby.syntax--embedded {
       color: @orange;
     }
   }
 
-  &.other.link {
+  &.syntax--other.syntax--link {
     color: @red;
     text-decoration: underline;
   }
 }
 
-.punctuation {
+.syntax--punctuation {
   &.definition {
-    &.comment {
+    &.syntax--comment {
       color: @text-dark; // haskell
     }
 
-    &.string {
+    &.syntax--string {
       color: @string; // haskell
     }
-    &.variable,
-    &.parameters,
-    &.array { // lua
+    &.syntax--variable,
+    &.syntax--parameters,
+    &.syntax--array { // lua
       color: lighten(@syntax-text-color, 8%);
     //   text-decoration: underline;
     }
 
-    &.heading,
-    &.identity {
+    &.syntax--heading,
+    &.syntax--identity {
       color: pink; //@blue;
       text-decoration: underline;
     }
 
-    &.bold {
+    &.syntax--bold {
       color: @light-orange;
       font-weight: bold;
     }
 
-    &.italic {
+    &.syntax--italic {
       color: @purple;
       font-style: italic;
     }
   }
 
-  &.section.embedded {
+  &.syntax--section.syntax--embedded {
     color: darken(@red, 10%);
   }
 
@@ -214,29 +214,29 @@ atom-text-editor .search-results .marker.current-result .region,
 // .identifier { // haskell:any identifier
 // }
 
-.support {
-  &.tag {
+.syntax--support {
+  &.syntax--tag {
     color: @build-in-constructor;
   }
 
-  &.class {
+  &.syntax--class {
     color: @build-in-type; // haskell
   }
 
-  &.function  {
+  &.syntax--function  {
     color: @build-in-function; // haskell
 
-    &.any-method { // lua
+    &.syntax--any-method { // lua
       color: @blue;
     //   text-decoration: underline;
     }
   }
-  &.other.module {
+  &.syntax--other.syntax--module {
     color: @module; // haskell
   }
 }
 
-.entity {
+.syntax--entity {
   &.name.type {
     color: @data-type; // haskell
     // text-decoration: underline;
@@ -245,32 +245,32 @@ atom-text-editor .search-results .marker.current-result .region,
   //   text-decoration: underline;
   // }
 
-  &.other.inherited-class {
+  &.syntax--other.syntax--inherited-class {
     color: @deriving-classes; // haskell
   }
 
-  &.name.function {
+  &.syntax--name.syntax--function {
     color: @function; // haskell
   }
 
-  &.name.class, &.name.type.class {
+  &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
     color: @light-orange; // coffescript
     // text-decoration: underline;
   }
 
-  &.name.section {
+  &.syntax--name.syntax--section {
     color: @blue;
     text-decoration: underline;
   }
 
-  &.name.tag {
+  &.syntax--name.syntax--tag {
     color: @constructor; // haskell
   }
 
-  &.other.attribute-name {
+  &.syntax--other.syntax--attribute-name {
     color: @property; // haskell
 
-    &.id {
+    &.syntax--id {
       color: magenta; //@blue;
       text-decoration: underline;
     }
@@ -347,7 +347,7 @@ atom-text-editor .search-results .marker.current-result .region,
     font-style: italic;
   }
 
-  &.heading .punctuation.definition.heading {
+  &.heading .punctuation.syntax--definition.heading {
     color: @blue;
   }
 
